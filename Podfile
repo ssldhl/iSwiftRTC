@@ -4,7 +4,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'WebRTC iOS Swift' do
-
+    pod "libjingle_peerconnection"
 end
 
 target 'WebRTC iOS SwiftTests' do
