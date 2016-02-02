@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		77B1ED1D1C6086E90084C65B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B1ED1C1C6086E90084C65B /* AppDelegate.swift */; };
-		77B1ED1F1C6086E90084C65B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B1ED1E1C6086E90084C65B /* ViewController.swift */; };
+		77B1ED1F1C6086E90084C65B /* WebRTCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B1ED1E1C6086E90084C65B /* WebRTCViewController.swift */; };
 		77B1ED221C6086E90084C65B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77B1ED201C6086E90084C65B /* Main.storyboard */; };
 		77B1ED241C6086E90084C65B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77B1ED231C6086E90084C65B /* Assets.xcassets */; };
 		77B1ED271C6086E90084C65B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77B1ED251C6086E90084C65B /* LaunchScreen.storyboard */; };
@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		77B1ED191C6086E90084C65B /* WebRTC iOS Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WebRTC iOS Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77B1ED1C1C6086E90084C65B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		77B1ED1E1C6086E90084C65B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		77B1ED1E1C6086E90084C65B /* WebRTCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRTCViewController.swift; sourceTree = "<group>"; };
 		77B1ED211C6086E90084C65B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		77B1ED231C6086E90084C65B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77B1ED261C6086E90084C65B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				77B1ED1C1C6086E90084C65B /* AppDelegate.swift */,
-				77B1ED1E1C6086E90084C65B /* ViewController.swift */,
+				77B1ED1E1C6086E90084C65B /* WebRTCViewController.swift */,
 				77B1ED201C6086E90084C65B /* Main.storyboard */,
 				77B1ED231C6086E90084C65B /* Assets.xcassets */,
 				77B1ED251C6086E90084C65B /* LaunchScreen.storyboard */,
@@ -193,6 +193,7 @@
 				TargetAttributes = {
 					77B1ED181C6086E90084C65B = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 28RSYVTV6E;
 					};
 					77B1ED2C1C6086E90084C65B = {
 						CreatedOnToolsVersion = 7.2;
@@ -256,7 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77B1ED1F1C6086E90084C65B /* ViewController.swift in Sources */,
+				77B1ED1F1C6086E90084C65B /* WebRTCViewController.swift in Sources */,
 				77B1ED1D1C6086E90084C65B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,9 +398,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "WebRTC iOS Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.techguthi.WebRTC-iOS-Swift";
+				PRODUCT_BUNDLE_IDENTIFIER = com.techguthi.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -408,9 +410,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "WebRTC iOS Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.techguthi.WebRTC-iOS-Swift";
+				PRODUCT_BUNDLE_IDENTIFIER = com.techguthi.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
