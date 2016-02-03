@@ -28,6 +28,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let iceServerURL: NSURL? = NSURL(string: "'stun:stunserver.org'")
+        let iceServer: RTCICEServer = RTCICEServer(URI: iceServerURL!, username: "", password: "")
+        let iceServers: [RTCICEServer] = [iceServer]
+        
+        // Enable SSL globally for WebRTC in our app
+        RTCPeerConnectionFactory.initializeSSL()
+        
+        // Create the peer connection using the ICE server list and the current class as the delegate
+        let pcFactory: RTCPeerConnectionFactory = RTCPeerConnectionFactory()
+        let peerConnection: RTCPeerConnection
+        
         return true
     }
 
@@ -51,6 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        RTCPeerConnectionFactory.deinitializeSSL()
     }
 
 
