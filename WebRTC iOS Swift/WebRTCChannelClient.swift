@@ -3,12 +3,29 @@
 //  WebRTC iOS Swift
 //
 //  Created by Sushil Dahal on 2/2/16.
-//  Copyright © 2016 Sushil Dahal. All rights reserved.
+//  Copyright © 2016 Sushil Dahal.
+//
+//  This program is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  This program is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
 import Foundation
 import UIKit
 import WebKit
+
+// These methods will be called by the AppEngine chanel.  The documentation
+// for these methods is found here.  (Yes, it is a JS API.)
+// https://developers.google.com/appengine/docs/java/channel/javascript
 
 protocol WebRTCMessageHandler{
     func onOpen()
@@ -16,6 +33,10 @@ protocol WebRTCMessageHandler{
     func onClose()
     func onError(code: Int32, description: String)
 }
+
+// Initialize with a token for an WebRTC data channel.  This will load
+// channel.html and use the token to establish a data channel between the
+// application and AppEngine.
 
 class WebRTCChannelClient: NSObject, WKNavigationDelegate {
     var delegate: WebRTCMessageHandler?
