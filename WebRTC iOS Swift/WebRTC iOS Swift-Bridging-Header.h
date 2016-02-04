@@ -16,3 +16,5 @@
 #import "RTCVideoCapturer.h"
 #import "RTCVideoSource.h"
 #import "RTCDataChannel.h"
+#import "RTCVideoTrack.h"
+#import "RTCAudioTrack.h"

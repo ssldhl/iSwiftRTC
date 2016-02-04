@@ -20,6 +20,7 @@
 //
 
 import Foundation
+import AVFoundation
 
 // Used to log messages to destination like UI.
 protocol WebRTCLogger{
@@ -28,10 +29,10 @@ protocol WebRTCLogger{
 
 // Used to provide AppRTC connection information.
 protocol WebRTCConnectionManagerDelegate{
-    func didReceiveLocalVideoTrack()
-    func didReceiveRemoteVideoTrack()
-    func connectionManagerDidReceiveHangup()
-    func didErrorWithMessage()
+    func didReceiveLocalVideoTrack(manager: WebRTCConnectionManager, localVideoTrack: RTCVideoTrack)
+    func didReceiveRemoteVideoTrack(manager: WebRTCConnectionManager, remoteVideoTrack: RTCVideoTrack)
+    func connectionManagerDidReceiveHangup(manager: WebRTCConnectionManager)
+    func didErrorWithMessage(manager: WebRTCConnectionManager, errorMessage: String)
 }
 
 // Abstracts the network connection aspect of AppRTC. The delegate will receive
@@ -42,7 +43,7 @@ class WebRTCConnectionManager: NSObject, WebRTCClientDelegate, WebRTCMessageHand
     
     var client: WebRTCClient?
     var peerConnection: RTCPeerConnection?
-    var peerConnectionFactory: RTCPeerConnectionFactory?
+    var peerConnectionFactory: RTCPeerConnectionFactory = RTCPeerConnectionFactory()
     var videoSource: RTCVideoSource?
     var queuedRemoteCandidates: [String]?
     var statsTimer: NSTimer = NSTimer()
@@ -51,6 +52,11 @@ class WebRTCConnectionManager: NSObject, WebRTCClientDelegate, WebRTCMessageHand
         self.delegate = delegate
         self.logger = logger
         self.peerConnectionFactory = RTCPeerConnectionFactory()
+        
+//        Uncomment for stat logs.
+        let statsTimerSelector: Selector = Selector("didFireStatsTimer:")
+        statsTimer = NSTimer(timeInterval: 10, target: self, selector: statsTimerSelector, userInfo: nil, repeats: true)
+        
         return self
     }
     
@@ -81,11 +87,41 @@ class WebRTCConnectionManager: NSObject, WebRTCClientDelegate, WebRTCMessageHand
     
 //    MARK: WebRTCClientDelegate
     func didErrorWithMessage(appClient: WebRTCClient, message: String) {
-        
+        delegate?.didErrorWithMessage(self, errorMessage: message)
     }
     
     func didReceiveICEServers(appClient: WebRTCClient, servers: [RTCICEServer]) {
+        queuedRemoteCandidates = [String]()
+        let mandatoryConstraints: [RTCPair] = [RTCPair(key: "OfferToReceiveAudio", value: "true"), RTCPair(key: "OfferToReceiveVideo", value: "true")]
+        let optionalConstraints: [RTCPair] = [RTCPair(key: "internalSctpDataChannels", value: "true"), RTCPair(key: "DtlsSrtpKeyAgreement", value: "true")]
+        let constraints: RTCMediaConstraints = RTCMediaConstraints(mandatoryConstraints: mandatoryConstraints, optionalConstraints: optionalConstraints)
+        peerConnection = peerConnectionFactory.peerConnectionWithICEServers(servers, constraints: constraints, delegate: self)
+        let lms: RTCMediaStream = peerConnectionFactory.mediaStreamWithLabel("ARDAMS")
         
+//        The iOS simulator doesn't provide any sort of camera capture
+//        support or emulation (http://goo.gl/rHAnC1) so don't bother
+//        trying to open a local stream.
+        let localVideoTrack: RTCVideoTrack?
+        var cameraID: String? = nil
+        let captureDevices: [AVCaptureDevice] = AVCaptureDevice.devicesWithMediaType(AVMediaTypeVideo) as! [AVCaptureDevice]
+        for captureDevice in captureDevices{
+            if(captureDevice.position == AVCaptureDevicePosition.Front){
+                cameraID = captureDevice.localizedName
+                break
+            }
+        }
+        if(cameraID != nil){
+            let capturer: RTCVideoCapturer = RTCVideoCapturer(deviceName: cameraID)
+            videoSource = peerConnectionFactory.videoSourceWithCapturer(capturer, constraints: client?.videoConstraints)
+            localVideoTrack = peerConnectionFactory.videoTrackWithID("ARDAMSv0", source: videoSource)
+            if(localVideoTrack != nil){
+                lms.addVideoTrack(localVideoTrack)
+                delegate?.didReceiveLocalVideoTrack(self, localVideoTrack: localVideoTrack!)
+            }
+        }
+        lms.addAudioTrack(peerConnectionFactory.audioTrackWithID("ARDAMSa0"))
+        peerConnection?.addStream(lms)
+        logger?.logMessage("onICEServers - added local stream.")
     }
     
 //    MARK: WebRTCMessageHandler methods
