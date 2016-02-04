@@ -22,8 +22,8 @@
 import Foundation
 
 protocol WebRTCClientDelegate{
-    func appClient(appClient: WebRTCClient, message: String)
-    func appClient(appClient: WebRTCClient, servers: [RTCICEServer])
+    func didErrorWithMessage(appClient: WebRTCClient, message: String)
+    func didReceiveICEServers(appClient: WebRTCClient, servers: [RTCICEServer])
 }
 
 // Negotiates signaling for chatting with apprtc.appspot.com "rooms".
@@ -116,7 +116,7 @@ class WebRTCClient: NSObject{
                 for errorMessage: String in errorMessages{
                     message = "\(message)\n\(errorMessage)"
                 }
-                self.delegate?.appClient(self, message: message)
+                self.delegate?.didErrorWithMessage(self, message: message)
             }else{
                 let pcConfig: String = roomJSON["pc_config"] as! String
                 let pcConfigData: NSData = pcConfig.dataUsingEncoding(NSUTF8StringEncoding)!
@@ -250,14 +250,14 @@ class WebRTCClient: NSObject{
                     var servers: [RTCICEServer] = iceServers
                     servers.append(turnServer!)
                     print("ICE Servers: \(servers)")
-                    self.delegate?.appClient(self, servers: servers)
+                    self.delegate?.didReceiveICEServers(self, servers: servers)
                 }else{
                     print("ERROR: \(error!.localizedDescription)")
                 }
             })
         }else{
             print("ICE Servers: \(iceServers)")
-            delegate?.appClient(self, servers: iceServers)
+            delegate?.didReceiveICEServers(self, servers: iceServers)
         }
     }
     

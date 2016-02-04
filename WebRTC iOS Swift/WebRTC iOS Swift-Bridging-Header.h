@@ -15,3 +15,4 @@
 #import "RTCStatsDelegate.h"
 #import "RTCVideoCapturer.h"
 #import "RTCVideoSource.h"
+#import "RTCDataChannel.h"
