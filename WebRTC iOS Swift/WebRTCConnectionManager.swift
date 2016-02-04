@@ -21,10 +21,12 @@
 
 import Foundation
 
+// Used to log messages to destination like UI.
 protocol WebRTCLogger{
     func logMessage(message: String)
 }
 
+// Used to provide AppRTC connection information.
 protocol WebRTCConnectionManagerDelegate{
     func didReceiveLocalVideoTrack()
     func didReceiveRemoteVideoTrack()
@@ -32,6 +34,8 @@ protocol WebRTCConnectionManagerDelegate{
     func didErrorWithMessage()
 }
 
+// Abstracts the network connection aspect of AppRTC. The delegate will receive
+// information about connection status as changes occur.
 class WebRTCConnectionManager: NSObject, WebRTCClientDelegate, WebRTCMessageHandler, RTCPeerConnectionDelegate, RTCSessionDescriptionDelegate, RTCStatsDelegate {
     var delegate: WebRTCConnectionManagerDelegate?
     var logger: WebRTCLogger?
