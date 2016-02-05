@@ -20,7 +20,6 @@
 //
 
 import Foundation
-import UIKit
 import WebKit
 
 // These methods will be called by the AppEngine chanel.  The documentation
