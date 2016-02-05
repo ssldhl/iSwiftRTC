@@ -18,3 +18,5 @@
 #import "RTCDataChannel.h"
 #import "RTCVideoTrack.h"
 #import "RTCAudioTrack.h"
+#import "RTCEAGLVideoView.h"
+#import "RTCI420Frame.h"

@@ -3,9 +3,10 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--WebRTC View Controller-->
+        <!--WebRTC iOS Swift-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="WebRTCViewController" customModule="WebRTC_iOS_Swift" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,10 +17,61 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Enter the room below to connect to WebRTC" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTj-Mg-2Xb">
+                                <rect key="frame" x="8" y="72" width="304" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="BB4-Vd-9Tb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMs-1U-BLL">
+                                <rect key="frame" x="8" y="72" width="304" height="83"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QCh-Cx-b3S">
+                                <rect key="frame" x="8" y="163" width="304" height="385"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="WebRTC Room" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3XU-WD-Bhy">
+                                <rect key="frame" x="8" y="125" width="304" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="9Vf-m1-4Dk"/>
+                                </connections>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3XU-WD-Bhy" firstAttribute="trailing" secondItem="QCh-Cx-b3S" secondAttribute="trailing" id="29A-XI-oGJ"/>
+                            <constraint firstItem="nMs-1U-BLL" firstAttribute="trailing" secondItem="3XU-WD-Bhy" secondAttribute="trailing" id="3fN-p8-HVR"/>
+                            <constraint firstItem="QCh-Cx-b3S" firstAttribute="leading" secondItem="3XU-WD-Bhy" secondAttribute="leading" id="8ep-GD-Mob"/>
+                            <constraint firstItem="fTj-Mg-2Xb" firstAttribute="trailing" secondItem="nMs-1U-BLL" secondAttribute="trailing" id="BKW-bB-V5F"/>
+                            <constraint firstItem="3XU-WD-Bhy" firstAttribute="top" secondItem="fTj-Mg-2Xb" secondAttribute="bottom" constant="3" id="FjK-w6-hOd"/>
+                            <constraint firstItem="fTj-Mg-2Xb" firstAttribute="leading" secondItem="3XU-WD-Bhy" secondAttribute="leading" id="JWW-QQ-Xhh"/>
+                            <constraint firstItem="fTj-Mg-2Xb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-8" id="WfV-NK-QUV"/>
+                            <constraint firstItem="3XU-WD-Bhy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YU1-VV-F3V"/>
+                            <constraint firstItem="fTj-Mg-2Xb" firstAttribute="top" secondItem="nMs-1U-BLL" secondAttribute="top" id="eqm-rk-Wa8"/>
+                            <constraint firstItem="QCh-Cx-b3S" firstAttribute="top" secondItem="3XU-WD-Bhy" secondAttribute="bottom" constant="8" symbolic="YES" id="fhK-eb-kAX"/>
+                            <constraint firstItem="nMs-1U-BLL" firstAttribute="leading" secondItem="3XU-WD-Bhy" secondAttribute="leading" id="fmu-FH-YAa"/>
+                            <constraint firstItem="fTj-Mg-2Xb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="qU0-nH-c3I"/>
+                            <constraint firstAttribute="bottom" secondItem="QCh-Cx-b3S" secondAttribute="bottom" constant="20" symbolic="YES" id="vUF-22-aqm"/>
+                            <constraint firstItem="QCh-Cx-b3S" firstAttribute="top" secondItem="nMs-1U-BLL" secondAttribute="bottom" constant="8" symbolic="YES" id="vzU-FF-roq"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="HbZ-gG-wLc"/>
+                    <navigationItem key="navigationItem" title="WebRTC iOS Swift" id="HbZ-gG-wLc"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="blackView" destination="QCh-Cx-b3S" id="Wow-aJ-pSX"/>
+                        <outlet property="instructionsView" destination="fTj-Mg-2Xb" id="LA7-ha-VYY"/>
+                        <outlet property="logView" destination="nMs-1U-BLL" id="nPk-9t-dYm"/>
+                        <outlet property="roomInput" destination="3XU-WD-Bhy" id="JXp-Yh-JY7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

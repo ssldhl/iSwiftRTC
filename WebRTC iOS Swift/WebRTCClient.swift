@@ -262,7 +262,8 @@ class WebRTCClient: NSObject{
     }
     
     func sendURLRequest(request: NSURLRequest, completionHandler: (error: NSError?, httpResponse: NSURLResponse?, responseData: NSData?)->Void){
-        let requestTask: NSURLSessionDataTask = NSURLSession().dataTaskWithRequest(request) { (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
+        let session: NSURLSession = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
+        let requestTask: NSURLSessionDataTask = session.dataTaskWithRequest(request) { (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     completionHandler(error: error, httpResponse: response, responseData: data)
             })
