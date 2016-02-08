@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		77680CB71C61EAD500472DCF /* channel.html in Resources */ = {isa = PBXBuildFile; fileRef = 77680CB61C61EAD500472DCF /* channel.html */; };
+		77481D081C68AB4A008F0177 /* RoomNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77481D071C68AB4A008F0177 /* RoomNameViewController.swift */; };
 		77B1ED1D1C6086E90084C65B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B1ED1C1C6086E90084C65B /* AppDelegate.swift */; };
 		77B1ED1F1C6086E90084C65B /* WebRTCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B1ED1E1C6086E90084C65B /* WebRTCViewController.swift */; };
 		77B1ED221C6086E90084C65B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77B1ED201C6086E90084C65B /* Main.storyboard */; };
@@ -15,10 +15,7 @@
 		77B1ED271C6086E90084C65B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77B1ED251C6086E90084C65B /* LaunchScreen.storyboard */; };
 		77B1ED321C6086E90084C65B /* WebRTC_iOS_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B1ED311C6086E90084C65B /* WebRTC_iOS_SwiftTests.swift */; };
 		77B1ED3D1C6086EA0084C65B /* WebRTC_iOS_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B1ED3C1C6086EA0084C65B /* WebRTC_iOS_SwiftUITests.swift */; };
-		77B1ED4F1C60C4AE0084C65B /* WebRTCConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B1ED4E1C60C4AE0084C65B /* WebRTCConnectionManager.swift */; };
-		77B1ED511C60C4BA0084C65B /* WebRTCClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B1ED501C60C4BA0084C65B /* WebRTCClient.swift */; };
-		77B1ED551C60C6960084C65B /* WebRTCChannelClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B1ED541C60C6960084C65B /* WebRTCChannelClient.swift */; };
-		C34FC2645C696C294EEBC828 /* Pods_WebRTC_iOS_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F221909678B682CBFB0DE97 /* Pods_WebRTC_iOS_Swift.framework */; };
+		7BE721D2EF3EDD8CCF2C74C7 /* libPods-WebRTC iOS Swift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40FB0F508A038D0343BCDEFE /* libPods-WebRTC iOS Swift.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6F221909678B682CBFB0DE97 /* Pods_WebRTC_iOS_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebRTC_iOS_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		77680CB61C61EAD500472DCF /* channel.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = channel.html; sourceTree = "<group>"; };
+		40FB0F508A038D0343BCDEFE /* libPods-WebRTC iOS Swift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WebRTC iOS Swift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		77481D071C68AB4A008F0177 /* RoomNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomNameViewController.swift; sourceTree = "<group>"; };
 		77B1ED191C6086E90084C65B /* WebRTC iOS Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WebRTC iOS Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77B1ED1C1C6086E90084C65B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77B1ED1E1C6086E90084C65B /* WebRTCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRTCViewController.swift; sourceTree = "<group>"; };
@@ -55,9 +52,6 @@
 		77B1ED3C1C6086EA0084C65B /* WebRTC_iOS_SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRTC_iOS_SwiftUITests.swift; sourceTree = "<group>"; };
 		77B1ED3E1C6086EA0084C65B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77B1ED4A1C60B3840084C65B /* WebRTC iOS Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WebRTC iOS Swift-Bridging-Header.h"; sourceTree = "<group>"; };
-		77B1ED4E1C60C4AE0084C65B /* WebRTCConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebRTCConnectionManager.swift; sourceTree = "<group>"; };
-		77B1ED501C60C4BA0084C65B /* WebRTCClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebRTCClient.swift; sourceTree = "<group>"; };
-		77B1ED541C60C6960084C65B /* WebRTCChannelClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebRTCChannelClient.swift; sourceTree = "<group>"; };
 		79B8F458440AEE63E1F24956 /* Pods-WebRTC iOS Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebRTC iOS Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-WebRTC iOS Swift/Pods-WebRTC iOS Swift.release.xcconfig"; sourceTree = "<group>"; };
 		8B627DA3869E94B4DFF4A9DA /* Pods-WebRTC iOS Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebRTC iOS Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WebRTC iOS Swift/Pods-WebRTC iOS Swift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C34FC2645C696C294EEBC828 /* Pods_WebRTC_iOS_Swift.framework in Frameworks */,
+				7BE721D2EF3EDD8CCF2C74C7 /* libPods-WebRTC iOS Swift.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,17 +94,9 @@
 		698279E736581A37F06E34A8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6F221909678B682CBFB0DE97 /* Pods_WebRTC_iOS_Swift.framework */,
+				40FB0F508A038D0343BCDEFE /* libPods-WebRTC iOS Swift.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		77680CB51C61EAC200472DCF /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				77680CB61C61EAD500472DCF /* channel.html */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		77B1ED101C6086E90084C65B = {
@@ -138,10 +124,7 @@
 		77B1ED1B1C6086E90084C65B /* WebRTC iOS Swift */ = {
 			isa = PBXGroup;
 			children = (
-				77680CB51C61EAC200472DCF /* Resources */,
-				77B1ED531C60C67C0084C65B /* View */,
 				77B1ED521C60C6640084C65B /* Controller */,
-				77B1ED4D1C60C48E0084C65B /* Services */,
 				77B1ED1C1C6086E90084C65B /* AppDelegate.swift */,
 				77B1ED201C6086E90084C65B /* Main.storyboard */,
 				77B1ED231C6086E90084C65B /* Assets.xcassets */,
@@ -170,29 +153,13 @@
 			path = "WebRTC iOS SwiftUITests";
 			sourceTree = "<group>";
 		};
-		77B1ED4D1C60C48E0084C65B /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				77B1ED4E1C60C4AE0084C65B /* WebRTCConnectionManager.swift */,
-				77B1ED501C60C4BA0084C65B /* WebRTCClient.swift */,
-			);
-			name = Services;
-			sourceTree = "<group>";
-		};
 		77B1ED521C60C6640084C65B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				77B1ED1E1C6086E90084C65B /* WebRTCViewController.swift */,
+				77481D071C68AB4A008F0177 /* RoomNameViewController.swift */,
 			);
 			name = Controller;
-			sourceTree = "<group>";
-		};
-		77B1ED531C60C67C0084C65B /* View */ = {
-			isa = PBXGroup;
-			children = (
-				77B1ED541C60C6960084C65B /* WebRTCChannelClient.swift */,
-			);
-			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,7 +270,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77680CB71C61EAD500472DCF /* channel.html in Resources */,
 				77B1ED271C6086E90084C65B /* LaunchScreen.storyboard in Resources */,
 				77B1ED241C6086E90084C65B /* Assets.xcassets in Resources */,
 				77B1ED221C6086E90084C65B /* Main.storyboard in Resources */,
@@ -380,10 +346,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				77B1ED1F1C6086E90084C65B /* WebRTCViewController.swift in Sources */,
-				77B1ED551C60C6960084C65B /* WebRTCChannelClient.swift in Sources */,
-				77B1ED4F1C60C4AE0084C65B /* WebRTCConnectionManager.swift in Sources */,
 				77B1ED1D1C6086E90084C65B /* AppDelegate.swift in Sources */,
-				77B1ED511C60C4BA0084C65B /* WebRTCClient.swift in Sources */,
+				77481D081C68AB4A008F0177 /* RoomNameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
