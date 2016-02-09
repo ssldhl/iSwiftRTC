@@ -1,15 +1,12 @@
 PODS:
-  - AppRTC (1.0.2):
-    - libjingle_peerconnection
-    - SocketRocket
   - libjingle_peerconnection (11177.2.0)
   - SocketRocket (0.4.2)
 
 DEPENDENCIES:
-  - AppRTC
+  - libjingle_peerconnection
+  - SocketRocket
 
 SPEC CHECKSUMS:
-  AppRTC: 29a5418955fee7fba3df36a0c37285cd835272ad
   libjingle_peerconnection: 3458f646ddd61f08a9f3a0c43fb01fff5c165eb8
   SocketRocket: ffe08119b00ef982f6c37052a4705a057c8494ad
 
