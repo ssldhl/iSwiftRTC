@@ -38,7 +38,7 @@ class WebRTCViewController: UIViewController, ARDAppClientDelegate, RTCEAGLVideo
         connectToChatRoom()
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         disconnect()
     }
@@ -48,37 +48,37 @@ class WebRTCViewController: UIViewController, ARDAppClientDelegate, RTCEAGLVideo
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func endButton(sender: UIButton) {
+    @IBAction func endButton(_ sender: UIButton) {
         disconnect()
-        self.navigationController?.popToRootViewControllerAnimated(true)
+        _ = self.navigationController?.popToRootViewController(animated: true)
     }
     
 //    MARK: RTCEAGLVideoViewDelegate
-    func appClient(client: ARDAppClient!, didChangeState state: ARDAppClientState) {
+    func appClient(_ client: ARDAppClient!, didChange state: ARDAppClientState) {
         switch state{
-        case ARDAppClientState.Connected:
+        case ARDAppClientState.connected:
             print("Client Connected")
             break
-        case ARDAppClientState.Connecting:
+        case ARDAppClientState.connecting:
             print("Client Connecting")
             break
-        case ARDAppClientState.Disconnected:
+        case ARDAppClientState.disconnected:
             print("Client Disconnected")
             remoteDisconnected()
         }
     }
     
-    func appClient(client: ARDAppClient!, didReceiveLocalVideoTrack localVideoTrack: RTCVideoTrack!) {
+    func appClient(_ client: ARDAppClient!, didReceiveLocalVideoTrack localVideoTrack: RTCVideoTrack!) {
         self.localVideoTrack = localVideoTrack
-        self.localVideoTrack?.addRenderer(localView)
+        self.localVideoTrack?.add(localView)
     }
     
-    func appClient(client: ARDAppClient!, didReceiveRemoteVideoTrack remoteVideoTrack: RTCVideoTrack!) {
+    func appClient(_ client: ARDAppClient!, didReceiveRemoteVideoTrack remoteVideoTrack: RTCVideoTrack!) {
         self.remoteVideoTrack = remoteVideoTrack
-        self.remoteVideoTrack?.addRenderer(remoteView)
+        self.remoteVideoTrack?.add(remoteView)
     }
     
-    func appClient(client: ARDAppClient!, didError error: NSError!) {
+    func appClient(_ client: ARDAppClient!, didError error: Error!) {
 //        Handle the error
         showAlertWithMessage(error.localizedDescription)
         disconnect()
@@ -86,7 +86,7 @@ class WebRTCViewController: UIViewController, ARDAppClientDelegate, RTCEAGLVideo
     
 //    MARK: RTCEAGLVideoViewDelegate
     
-    func videoView(videoView: RTCEAGLVideoView!, didChangeVideoSize size: CGSize) {
+    func videoView(_ videoView: RTCEAGLVideoView!, didChangeVideoSize size: CGSize) {
 //        Resize localView or remoteView based on the size returned
     }
     
@@ -104,12 +104,12 @@ class WebRTCViewController: UIViewController, ARDAppClientDelegate, RTCEAGLVideo
     
     func connectToChatRoom(){
         client?.serverHostUrl = "https://apprtc.appspot.com"
-        client?.connectToRoomWithId(roomName, options: nil)
+        client?.connectToRoom(withId: roomName, options: nil)
     }
     
     func remoteDisconnected(){
         if(remoteVideoTrack != nil){
-            remoteVideoTrack?.removeRenderer(remoteView)
+            remoteVideoTrack?.remove(remoteView)
         }
         remoteVideoTrack = nil
     }
@@ -117,10 +117,10 @@ class WebRTCViewController: UIViewController, ARDAppClientDelegate, RTCEAGLVideo
     func disconnect(){
         if(client != nil){
             if(localVideoTrack != nil){
-                localVideoTrack?.removeRenderer(localView)
+                localVideoTrack?.remove(localView)
             }
             if(remoteVideoTrack != nil){
-                remoteVideoTrack?.removeRenderer(remoteView)
+                remoteVideoTrack?.remove(remoteView)
             }
             localVideoTrack = nil
             remoteVideoTrack = nil
@@ -128,11 +128,11 @@ class WebRTCViewController: UIViewController, ARDAppClientDelegate, RTCEAGLVideo
         }
     }
     
-    func showAlertWithMessage(message: String){
-        let alertView: UIAlertController = UIAlertController(title: nil, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        let alertAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil)
+    func showAlertWithMessage(_ message: String){
+        let alertView: UIAlertController = UIAlertController(title: nil, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let alertAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
         alertView.addAction(alertAction)
-        self.presentViewController(alertView, animated: true, completion: nil)
+        self.present(alertView, animated: true, completion: nil)
     }
 }
 
