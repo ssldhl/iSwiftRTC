@@ -3,16 +3,16 @@ platform :ios, '8.0'
 # Uncomment this line if you're using Swift
 use_frameworks!
 
-target 'WebRTC iOS Swift' do
+target 'iSwiftRTC' do
     pod "libjingle_peerconnection"
     pod "SocketRocket"
 end
 
-target 'WebRTC iOS SwiftTests' do
+target 'iSwiftRTCTests' do
 
 end
 
-target 'WebRTC iOS SwiftUITests' do
+target 'iSwiftRTCUITests' do
 
 end
 

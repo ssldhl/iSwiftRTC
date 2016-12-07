@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7aj-9v-fUD">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="NO" initialViewController="7aj-9v-fUD">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <development version="7000" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
     </dependencies>
     <scenes>
-        <!--WebRTC iOS Swift-->
+        <!--iSwiftRTC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="WebRTCViewController" customModule="WebRTC_iOS_Swift" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,13 +19,13 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QCh-Cx-b3S" userLabel="Remote View" customClass="RTCEAGLVideoView">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53B-Px-2ak">
                                 <rect key="frame" x="137" y="504" width="46" height="30"/>
                                 <color key="backgroundColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="End">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="endButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pf0-2H-AYq"/>
@@ -33,13 +33,13 @@
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8JE-bN-0cl" userLabel="Local View" customClass="RTCEAGLVideoView">
                                 <rect key="frame" x="192" y="89" width="105" height="85"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="85" id="j4D-MI-naZ"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="53B-Px-2ak" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3D9-5T-hBs"/>
                             <constraint firstItem="8JE-bN-0cl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="192" id="9Tb-82-8IR"/>
@@ -53,7 +53,7 @@
                             <constraint firstItem="QCh-Cx-b3S" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="lPV-ip-l2y"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="WebRTC iOS Swift" id="HbZ-gG-wLc"/>
+                    <navigationItem key="navigationItem" title="iSwiftRTC" id="HbZ-gG-wLc"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="instructionsView" destination="fTj-Mg-2Xb" id="LA7-ha-VYY"/>
@@ -66,7 +66,7 @@
             </objects>
             <point key="canvasLocation" x="2186" y="490"/>
         </scene>
-        <!--WebRTC iOS Swift-->
+        <!--iSwiftRTC-->
         <scene sceneID="hZa-jo-Tpf">
             <objects>
                 <viewController id="Elf-ct-PJB" customClass="RoomNameViewController" customModule="WebRTC_iOS_Swift" customModuleProvider="target" sceneMemberID="viewController">
@@ -80,7 +80,7 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Enter the room below to connect to WebRTC" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTj-Mg-2Xb">
                                 <rect key="frame" x="8" y="72" width="304" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="akZ-LR-1Q0"/>
                                 </constraints>
@@ -99,14 +99,14 @@
                                 <rect key="frame" x="137" y="173" width="46" height="30"/>
                                 <color key="backgroundColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Join">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="connectButton:" destination="Elf-ct-PJB" eventType="touchUpInside" id="TPD-cV-ZM3"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="win-aZ-W4G" firstAttribute="centerX" secondItem="zfA-Km-Pbg" secondAttribute="centerX" id="4cB-Sf-6gC"/>
                             <constraint firstItem="fTj-Mg-2Xb" firstAttribute="top" secondItem="8hJ-QF-z9a" secondAttribute="bottom" constant="8" id="BRF-x0-xrH"/>
@@ -119,7 +119,7 @@
                             <constraint firstItem="3XU-WD-Bhy" firstAttribute="centerX" secondItem="zfA-Km-Pbg" secondAttribute="centerX" id="sr6-fe-eZ8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="WebRTC iOS Swift" id="KPv-bd-cLJ"/>
+                    <navigationItem key="navigationItem" title="iSwiftRTC" id="KPv-bd-cLJ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="roomName" destination="3XU-WD-Bhy" id="8Ge-Nc-Ii2"/>
